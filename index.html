@@ -9,293 +9,325 @@
 /* =============================================================================
    CSS VARIABLES & RESET
    ============================================================================= */
-:root{
-    --primary:#1565C0;
-    --primary-dark:#0D47A1;
-    --dark:#2D2D2D;
-    --gray:#666;
-    --light:#E8E8E8;
-    --bg:#F5F7FA;
-    --green:#28a745;
-    --orange:#FF9800;
-    --blue:#2196F3;
-    --purple:#7B1FA2;
-    --red:#C8102E;
-    --teal:#00897B;
-    --accent-light:#E3F0FF;
-    --me-color:#00897B;
-    --cost-color:#E65100
+:root {
+    --primary: #1565C0;
+    --primary-dark: #0D47A1;
+    --dark: #2D2D2D;
+    --gray: #666;
+    --light: #E8E8E8;
+    --bg: #F5F7FA;
+    --green: #28a745;
+    --orange: #FF9800;
+    --blue: #2196F3;
+    --purple: #7B1FA2;
+    --red: #C8102E;
+    --teal: #00897B;
+    --accent-light: #E3F0FF;
+    --me-color: #00897B;
+    --cost-color: #E65100
 }
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Prompt',sans-serif;background:var(--bg);color:var(--dark);font-size:14px;line-height:1.5}
-.container{max-width:1400px;margin:0 auto;padding:20px}
+* { margin: 0; padding: 0; box-sizing: border-box }
+body { font-family: 'Prompt', sans-serif; background: var(--bg); color: var(--dark); font-size: 14px; line-height: 1.5 }
+.container { max-width: 1400px; margin: 0 auto; padding: 20px }
 
 /* =============================================================================
    HEADER
    ============================================================================= */
-.header{
-    background:linear-gradient(135deg,var(--primary),var(--primary-dark));
-    color:#fff;padding:24px;border-radius:16px;margin-bottom:20px;
-    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px
+.header {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #fff;
+    padding: 24px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px
 }
-.header h1{font-size:1.4rem;display:flex;align-items:center;gap:10px}
-.header p{opacity:.9;font-size:.85rem}
-.header-stats{display:flex;gap:30px}
-.header-stat{text-align:center}
-.header-stat-value{font-size:1.8rem;font-weight:700}
-.header-stat-label{font-size:.75rem;opacity:.85}
+.header h1 { font-size: 1.4rem; display: flex; align-items: center; gap: 10px }
+.header p { opacity: .9; font-size: .85rem }
+.header-stats { display: flex; gap: 30px }
+.header-stat { text-align: center }
+.header-stat-value { font-size: 1.8rem; font-weight: 700 }
+.header-stat-label { font-size: .75rem; opacity: .85 }
 
 /* =============================================================================
    STATUS BAR
    ============================================================================= */
-.status-bar{
-    background:#fff;padding:12px 20px;border-radius:12px;margin-bottom:20px;
-    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
-    box-shadow:0 2px 8px rgba(0,0,0,.06)
+.status-bar {
+    background: #fff;
+    padding: 12px 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.06)
 }
-.status-item{display:flex;align-items:center;gap:8px;font-size:.85rem}
-.status-dot{width:10px;height:10px;border-radius:50%;background:#ccc}
-.status-dot.online{background:var(--green);animation:pulse 2s infinite}
-.status-dot.loading{background:var(--orange);animation:pulse 1s infinite}
-.status-dot.error{background:var(--red)}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.status-item { display: flex; align-items: center; gap: 8px; font-size: .85rem }
+.status-dot { width: 10px; height: 10px; border-radius: 50%; background: #ccc }
+.status-dot.online { background: var(--green); animation: pulse 2s infinite }
+.status-dot.loading { background: var(--orange); animation: pulse 1s infinite }
+.status-dot.error { background: var(--red) }
+@keyframes pulse { 0%, 100% { opacity: 1 } 50% { opacity: .5 } }
 
 /* =============================================================================
    FILTER BAR
    ============================================================================= */
-.filter-bar{
-    background:#fff;padding:15px 20px;border-radius:12px;margin-bottom:20px;
-    display:flex;gap:15px;flex-wrap:wrap;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.06)
+.filter-bar {
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,.06)
 }
-.filter-group{display:flex;align-items:center;gap:8px}
-.filter-group label{font-weight:500;font-size:.85rem;color:var(--gray)}
-select,input[type=text]{padding:8px 12px;border:2px solid var(--light);border-radius:8px;font-family:inherit;font-size:.85rem}
-select:focus,input:focus{outline:none;border-color:var(--primary)}
-.btn{padding:8px 16px;background:var(--primary);color:#fff;border:none;border-radius:8px;font-family:inherit;font-size:.85rem;font-weight:500;cursor:pointer;transition:background .2s}
-.btn:hover{background:var(--primary-dark)}
-.btn.sec{background:var(--light);color:var(--dark)}
-.btn.sec:hover{background:#ddd}
+.filter-group { display: flex; align-items: center; gap: 8px }
+.filter-group label { font-weight: 500; font-size: .85rem; color: var(--gray) }
+select, input[type=text] { padding: 8px 12px; border: 2px solid var(--light); border-radius: 8px; font-family: inherit; font-size: .85rem }
+select:focus, input:focus { outline: none; border-color: var(--primary) }
+.btn { padding: 8px 16px; background: var(--primary); color: #fff; border: none; border-radius: 8px; font-family: inherit; font-size: .85rem; font-weight: 500; cursor: pointer; transition: background .2s }
+.btn:hover { background: var(--primary-dark) }
+.btn.sec { background: var(--light); color: var(--dark) }
+.btn.sec:hover { background: #ddd }
 
 /* =============================================================================
    KPI ROW
    ============================================================================= */
-.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:15px;margin-bottom:20px}
-.kpi{background:#fff;padding:18px;border-radius:12px;text-align:center;border-left:4px solid var(--primary);box-shadow:0 2px 8px rgba(0,0,0,.06)}
-.kpi.green{border-left-color:var(--green)}
-.kpi.blue{border-left-color:var(--blue)}
-.kpi.orange{border-left-color:var(--orange)}
-.kpi.red{border-left-color:var(--red)}
-.kpi.teal{border-left-color:var(--teal)}
-.kpi-value{font-size:1.6rem;font-weight:700}
-.kpi-label{font-size:.8rem;color:var(--gray);margin-top:4px}
-.kpi-hint{font-size:.7rem;margin-top:6px;padding:2px 8px;border-radius:12px;display:inline-block;background:var(--accent-light);color:var(--primary)}
-.kpi-hint.warning{background:#FFF3E0;color:var(--orange)}
-.kpi-hint.danger{background:#FFEBEE;color:var(--red)}
-.kpi-hint.teal{background:#E0F2F1;color:var(--teal)}
+.kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; margin-bottom: 20px }
+.kpi { background: #fff; padding: 18px; border-radius: 12px; text-align: center; border-left: 4px solid var(--primary); box-shadow: 0 2px 8px rgba(0,0,0,.06) }
+.kpi.green { border-left-color: var(--green) }
+.kpi.blue { border-left-color: var(--blue) }
+.kpi.orange { border-left-color: var(--orange) }
+.kpi.red { border-left-color: var(--red) }
+.kpi.teal { border-left-color: var(--teal) }
+.kpi-value { font-size: 1.6rem; font-weight: 700 }
+.kpi-label { font-size: .8rem; color: var(--gray); margin-top: 4px }
+.kpi-hint { font-size: .7rem; margin-top: 6px; padding: 2px 8px; border-radius: 12px; display: inline-block; background: var(--accent-light); color: var(--primary) }
+.kpi-hint.warning { background: #FFF3E0; color: var(--orange) }
+.kpi-hint.danger { background: #FFEBEE; color: var(--red) }
+.kpi-hint.teal { background: #E0F2F1; color: var(--teal) }
 
 /* =============================================================================
    GRID & CARDS
    ============================================================================= */
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-@media(max-width:900px){.grid{grid-template-columns:1fr}}
-.card{background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.06);overflow:hidden}
-.card.full{grid-column:1/-1}
-.card-header{padding:14px 18px;border-bottom:1px solid var(--light);display:flex;align-items:center;gap:10px}
-.card-badge{width:28px;height:28px;background:var(--primary);color:#fff;border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:.8rem}
-.card-badge.me{background:var(--me-color)}
-.card-badge.cost{background:var(--cost-color)}
-.card-title h3{font-size:.9rem;font-weight:600}
-.card-title p{font-size:.7rem;color:var(--gray)}
-.card-body{padding:18px}
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px }
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr } }
+.card { background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.06); overflow: hidden }
+.card.full { grid-column: 1 / -1 }
+.card-header { padding: 14px 18px; border-bottom: 1px solid var(--light); display: flex; align-items: center; gap: 10px }
+.card-badge { width: 28px; height: 28px; background: var(--primary); color: #fff; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: .8rem }
+.card-badge.me { background: var(--me-color) }
+.card-badge.cost { background: var(--cost-color) }
+.card-title h3 { font-size: .9rem; font-weight: 600 }
+.card-title p { font-size: .7rem; color: var(--gray) }
+.card-body { padding: 18px }
 
 /* =============================================================================
    DEPARTMENT SNAPSHOT — grouped by category
    ============================================================================= */
-.dept-group{margin-bottom:14px}
-.dept-group:last-child{margin-bottom:0}
-.dept-group-label{font-size:.7rem;font-weight:600;color:#fff;padding:4px 10px;border-radius:6px;margin-bottom:8px;display:inline-block}
-.dept-group-label.eng{background:#1565C0}
-.dept-group-label.me{background:#00897B}
-.dept-group-label.cost{background:#E65100}
-.dept-group-label.proc{background:#6A1B9A}
-.dept-group-label.support{background:#37474F}
-.dept-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px}
-.dept-card{padding:10px;background:var(--bg);border-radius:8px;text-align:center;border-left:3px solid var(--primary)}
-.dept-card.me{border-left-color:var(--me-color)}
-.dept-card.cost{border-left-color:var(--cost-color)}
-.dept-card.proc{border-left-color:#6A1B9A}
-.dept-card.support{border-left-color:#37474F}
-.dept-card .dept-name{font-size:.72rem;font-weight:500;margin-bottom:4px}
-.dept-card .dept-count{font-size:1.2rem;font-weight:700;color:var(--primary)}
-.dept-card.me .dept-count{color:var(--me-color)}
-.dept-card.cost .dept-count{color:var(--cost-color)}
+.dept-group { margin-bottom: 14px }
+.dept-group:last-child { margin-bottom: 0 }
+.dept-group-label { font-size: .7rem; font-weight: 600; color: #fff; padding: 4px 10px; border-radius: 6px; margin-bottom: 8px; display: inline-block }
+.dept-group-label.eng { background: #1565C0 }
+.dept-group-label.me { background: #00897B }
+.dept-group-label.cost { background: #E65100 }
+.dept-group-label.proc { background: #6A1B9A }
+.dept-group-label.support { background: #37474F }
+.dept-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px }
+.dept-card { padding: 10px; background: var(--bg); border-radius: 8px; text-align: center; border-left: 3px solid var(--primary) }
+.dept-card.me { border-left-color: var(--me-color) }
+.dept-card.cost { border-left-color: var(--cost-color) }
+.dept-card.proc { border-left-color: #6A1B9A }
+.dept-card.support { border-left-color: #37474F }
+.dept-card .dept-name { font-size: .72rem; font-weight: 500; margin-bottom: 4px }
+.dept-card .dept-count { font-size: 1.2rem; font-weight: 700; color: var(--primary) }
+.dept-card.me .dept-count { color: var(--me-color) }
+.dept-card.cost .dept-count { color: var(--cost-color) }
 
 /* =============================================================================
    LEVEL DISTRIBUTION (Card B1)
    ============================================================================= */
-.level-bars{display:flex;flex-direction:column;gap:8px}
-.level-item{display:flex;align-items:center;gap:10px}
-.level-badge{width:32px;height:32px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:.75rem}
-.l0{background:#E0E0E0}.l1{background:#FFCDD2}.l2{background:#FFAB91}.l3{background:#FFE082}.l4{background:#A5D6A7}.l5{background:#4CAF50;color:#fff}
-.level-info{flex:1}
-.level-top{display:flex;justify-content:space-between;font-size:.75rem;margin-bottom:3px}
-.level-count{font-weight:600;color:var(--primary)}
-.level-track{height:6px;background:var(--light);border-radius:3px;overflow:hidden}
-.level-fill{height:100%;border-radius:3px}
+.level-bars { display: flex; flex-direction: column; gap: 8px }
+.level-item { display: flex; align-items: center; gap: 10px }
+.level-badge { width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: .75rem }
+.l0 { background: #E0E0E0 }
+.l1 { background: #FFCDD2 }
+.l2 { background: #FFAB91 }
+.l3 { background: #FFE082 }
+.l4 { background: #A5D6A7 }
+.l5 { background: #4CAF50; color: #fff }
+.level-info { flex: 1 }
+.level-top { display: flex; justify-content: space-between; font-size: .75rem; margin-bottom: 3px }
+.level-count { font-weight: 600; color: var(--primary) }
+.level-track { height: 6px; background: var(--light); border-radius: 3px; overflow: hidden }
+.level-fill { height: 100%; border-radius: 3px }
 
 /* =============================================================================
    TOOL ADOPTION (Card B2)
    ============================================================================= */
-.tool-grid{display:flex;flex-wrap:wrap;gap:6px}
-.tool-chip{padding:5px 10px;background:var(--bg);border-radius:12px;font-size:.72rem;display:flex;align-items:center;gap:4px}
-.tool-chip .cnt{background:var(--primary);color:#fff;padding:1px 5px;border-radius:6px;font-size:.6rem;font-weight:600}
-.tool-section{margin-bottom:10px}
-.tool-label{font-size:.7rem;color:var(--gray);margin-bottom:5px;font-weight:500}
+.tool-grid { display: flex; flex-wrap: wrap; gap: 6px }
+.tool-chip { padding: 5px 10px; background: var(--bg); border-radius: 12px; font-size: .72rem; display: flex; align-items: center; gap: 4px }
+.tool-chip .cnt { background: var(--primary); color: #fff; padding: 1px 5px; border-radius: 6px; font-size: .6rem; font-weight: 600 }
+.tool-section { margin-bottom: 10px }
+.tool-label { font-size: .7rem; color: var(--gray); margin-bottom: 5px; font-weight: 500 }
 
 /* =============================================================================
    FREQUENCY CHART (Card B3)
    ============================================================================= */
-.freq-chart{display:flex;align-items:flex-end;justify-content:space-around;height:140px;padding-top:20px}
-.freq-wrap{display:flex;flex-direction:column;align-items:center;gap:5px}
-.freq-bar{width:36px;background:linear-gradient(to top,var(--primary),var(--primary-dark));border-radius:4px 4px 0 0;position:relative;min-height:4px}
-.freq-val{position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:.7rem;font-weight:600}
-.freq-lbl{font-size:.6rem;color:var(--gray);text-align:center;max-width:55px}
+.freq-chart { display: flex; align-items: flex-end; justify-content: space-around; height: 140px; padding-top: 20px }
+.freq-wrap { display: flex; flex-direction: column; align-items: center; gap: 5px }
+.freq-bar { width: 36px; background: linear-gradient(to top, var(--primary), var(--primary-dark)); border-radius: 4px 4px 0 0; position: relative; min-height: 4px }
+.freq-val { position: absolute; top: -18px; left: 50%; transform: translateX(-50%); font-size: .7rem; font-weight: 600 }
+.freq-lbl { font-size: .6rem; color: var(--gray); text-align: center; max-width: 55px }
 
 /* =============================================================================
    M&E BREAKDOWN (Card C-ME) — TTS Exclusive
    ============================================================================= */
-.me-breakdown{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
-.me-card{padding:10px;background:var(--bg);border-radius:8px;border-left:3px solid var(--me-color);text-align:center}
-.me-card .me-name{font-size:.72rem;font-weight:500;color:var(--me-color);margin-bottom:4px}
-.me-card .me-count{font-size:1.1rem;font-weight:700;color:var(--me-color)}
-.me-card .me-work-list{font-size:.65rem;color:var(--gray);margin-top:4px;text-align:left}
+.me-breakdown { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px }
+.me-card { padding: 10px; background: var(--bg); border-radius: 8px; border-left: 3px solid var(--me-color); text-align: center }
+.me-card .me-name { font-size: .72rem; font-weight: 500; color: var(--me-color); margin-bottom: 4px }
+.me-card .me-count { font-size: 1.1rem; font-weight: 700; color: var(--me-color) }
+.me-card .me-work-list { font-size: .65rem; color: var(--gray); margin-top: 4px; text-align: left }
+
+/* =============================================================================
+   COST CONTROL PANEL (Card C-COST) — TTS Exclusive
+   ============================================================================= */
+.cost-panel { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px }
+.cost-stat { padding: 12px; background: var(--bg); border-radius: 8px; border-left: 3px solid var(--cost-color) }
+.cost-stat-title { font-size: .7rem; color: var(--cost-color); font-weight: 600; margin-bottom: 4px }
+.cost-stat-value { font-size: 1rem; font-weight: 700 }
+.cost-stat-list { font-size: .65rem; color: var(--gray); margin-top: 4px }
 
 /* =============================================================================
    DAILY WORK / RANKING (Card C)
    ============================================================================= */
-.work-list{display:flex;flex-direction:column;gap:6px}
-.work-item{display:flex;align-items:center;gap:8px}
-.work-rank{width:20px;height:20px;background:var(--primary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:600}
-.work-info{flex:1}
-.work-name{font-size:.7rem;margin-bottom:2px}
-.work-track{height:4px;background:var(--light);border-radius:2px;overflow:hidden}
-.work-fill{height:100%;background:var(--primary)}
-.work-pct{font-size:.75rem;font-weight:700;color:var(--primary);min-width:35px;text-align:right}
+.work-list { display: flex; flex-direction: column; gap: 6px }
+.work-item { display: flex; align-items: center; gap: 8px }
+.work-rank { width: 20px; height: 20px; background: var(--primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .6rem; font-weight: 600 }
+.work-info { flex: 1 }
+.work-name { font-size: .7rem; margin-bottom: 2px }
+.work-track { height: 4px; background: var(--light); border-radius: 2px; overflow: hidden }
+.work-fill { height: 100%; background: var(--primary) }
+.work-pct { font-size: .75rem; font-weight: 700; color: var(--primary); min-width: 35px; text-align: right }
 
 /* =============================================================================
    PROBLEM LIST (Card D1)
    ============================================================================= */
-.problem-list{display:flex;flex-direction:column;gap:6px}
-.problem-item{display:flex;align-items:center;gap:8px;padding:8px;background:var(--bg);border-radius:6px}
-.problem-icon{width:26px;height:26px;background:#FFEBEE;color:var(--red);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.8rem}
-.problem-name{flex:1;font-size:.75rem}
-.problem-cnt{font-size:.9rem;font-weight:700;color:var(--red)}
+.problem-list { display: flex; flex-direction: column; gap: 6px }
+.problem-item { display: flex; align-items: center; gap: 8px; padding: 8px; background: var(--bg); border-radius: 6px }
+.problem-icon { width: 26px; height: 26px; background: #FFEBEE; color: var(--red); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: .8rem }
+.problem-name { flex: 1; font-size: .75rem }
+.problem-cnt { font-size: .9rem; font-weight: 700; color: var(--red) }
 
 /* =============================================================================
    THEME GRID (Card D2, E2)
    ============================================================================= */
-.theme-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:6px}
-.theme-card{padding:8px;background:var(--bg);border-radius:6px;display:flex;align-items:center;gap:6px}
-.theme-icon{width:28px;height:28px;background:#fff;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.9rem}
-.theme-name{font-size:.7rem;font-weight:500}
-.theme-votes{font-size:.6rem;color:var(--gray)}
+.theme-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 6px }
+.theme-card { padding: 8px; background: var(--bg); border-radius: 6px; display: flex; align-items: center; gap: 6px }
+.theme-icon { width: 28px; height: 28px; background: #fff; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: .9rem }
+.theme-name { font-size: .7rem; font-weight: 500 }
+.theme-votes { font-size: .6rem; color: var(--gray) }
 
 /* =============================================================================
    MATRIX (Card D3)
    ============================================================================= */
-.matrix{position:relative;width:100%;height:280px;background:linear-gradient(to right,#E3F0FF 50%,#FFF3E0 50%);border-radius:8px;overflow:hidden}
-.matrix::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:rgba(0,0,0,.1)}
-.matrix::after{content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;background:rgba(0,0,0,.1)}
-.quad{position:absolute;font-size:.6rem;font-weight:600;color:var(--gray);opacity:.7}
-.quad.tl{top:6px;left:6px}.quad.tr{top:6px;right:6px;text-align:right}.quad.bl{bottom:6px;left:6px}.quad.br{bottom:6px;right:6px;text-align:right}
-.bubble{position:absolute;padding:4px 8px;background:#fff;border-radius:12px;font-size:.6rem;box-shadow:0 2px 5px rgba(0,0,0,.15);cursor:pointer;white-space:nowrap;transition:transform .2s}
-.bubble:hover{transform:scale(1.1);z-index:10}
-.bubble .v{background:var(--primary);color:#fff;padding:1px 4px;border-radius:4px;font-size:.5rem;margin-left:2px}
-
-/* =============================================================================
-   COST CONTROL PANEL (TTS Exclusive)
-   ============================================================================= */
-.cost-panel{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
-.cost-stat{padding:12px;background:var(--bg);border-radius:8px;border-left:3px solid var(--cost-color)}
-.cost-stat-title{font-size:.7rem;color:var(--cost-color);font-weight:600;margin-bottom:4px}
-.cost-stat-value{font-size:1rem;font-weight:700}
-.cost-stat-list{font-size:.65rem;color:var(--gray);margin-top:4px}
+.matrix { position: relative; width: 100%; height: 280px; background: linear-gradient(to right, #E3F0FF 50%, #FFF3E0 50%); border-radius: 8px; overflow: hidden }
+.matrix::before { content: ''; position: absolute; top: 50%; left: 0; right: 0; height: 1px; background: rgba(0,0,0,.1) }
+.matrix::after { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: rgba(0,0,0,.1) }
+.quad { position: absolute; font-size: .6rem; font-weight: 600; color: var(--gray); opacity: .7 }
+.quad.tl { top: 6px; left: 6px }
+.quad.tr { top: 6px; right: 6px; text-align: right }
+.quad.bl { bottom: 6px; left: 6px }
+.quad.br { bottom: 6px; right: 6px; text-align: right }
+.bubble { position: absolute; padding: 4px 8px; background: #fff; border-radius: 12px; font-size: .6rem; box-shadow: 0 2px 5px rgba(0,0,0,.15); cursor: pointer; white-space: nowrap; transition: transform .2s }
+.bubble:hover { transform: scale(1.1); z-index: 10 }
+.bubble .v { background: var(--primary); color: #fff; padding: 1px 4px; border-radius: 4px; font-size: .5rem; margin-left: 2px }
 
 /* =============================================================================
    RATING TABLE (Card E1)
    ============================================================================= */
-.rating-table{width:100%;border-collapse:collapse}
-.rating-table th,.rating-table td{padding:8px;text-align:left;border-bottom:1px solid var(--light);font-size:.75rem}
-.rating-table th{font-weight:500;color:var(--gray);font-size:.7rem}
-.rating-wrap{display:flex;align-items:center;gap:6px}
-.rating-bar{flex:1;height:6px;background:var(--light);border-radius:3px;overflow:hidden;max-width:80px}
-.rating-fill{height:100%;background:var(--primary)}
-.rating-score{font-weight:700;color:var(--primary);min-width:24px}
+.rating-table { width: 100%; border-collapse: collapse }
+.rating-table th, .rating-table td { padding: 8px; text-align: left; border-bottom: 1px solid var(--light); font-size: .75rem }
+.rating-table th { font-weight: 500; color: var(--gray); font-size: .7rem }
+.rating-wrap { display: flex; align-items: center; gap: 6px }
+.rating-bar { flex: 1; height: 6px; background: var(--light); border-radius: 3px; overflow: hidden; max-width: 80px }
+.rating-fill { height: 100%; background: var(--primary) }
+.rating-score { font-weight: 700; color: var(--primary); min-width: 24px }
 
 /* =============================================================================
    IDEAS LIST (Card F)
    ============================================================================= */
-.ideas-list{display:flex;flex-direction:column;gap:8px;max-height:300px;overflow-y:auto}
-.idea-card{padding:10px;background:var(--bg);border-radius:8px;border-left:3px solid var(--primary)}
-.idea-header{display:flex;justify-content:space-between;margin-bottom:4px}
-.idea-badge{padding:2px 6px;border-radius:8px;font-size:.55rem;font-weight:600;background:var(--accent-light);color:var(--primary)}
-.idea-badge.me{background:#E0F2F1;color:var(--me-color)}
-.idea-badge.cost{background:#FBE9E7;color:var(--cost-color)}
-.idea-text{font-size:.75rem}
+.ideas-list { display: flex; flex-direction: column; gap: 8px; max-height: 300px; overflow-y: auto }
+.idea-card { padding: 10px; background: var(--bg); border-radius: 8px; border-left: 3px solid var(--primary) }
+.idea-header { display: flex; justify-content: space-between; margin-bottom: 4px }
+.idea-badge { padding: 2px 6px; border-radius: 8px; font-size: .55rem; font-weight: 600; background: var(--accent-light); color: var(--primary) }
+.idea-badge.me { background: #E0F2F1; color: var(--me-color) }
+.idea-badge.cost { background: #FBE9E7; color: var(--cost-color) }
+.idea-text { font-size: .75rem }
+.tag { display: inline-block; padding: 2px 7px; border-radius: 10px; font-size: .6rem; font-weight: 600; margin-right: 3px }
+.tag.me { background: #E0F2F1; color: var(--me-color) }
+.tag.cost { background: #FBE9E7; color: var(--cost-color) }
 
 /* =============================================================================
    INSIGHT & RECOMMENDATION PANELS
    ============================================================================= */
-.insight-panel{background:linear-gradient(135deg,#E3F0FF,#BBDEFB);border-radius:12px;padding:18px;margin-top:20px}
-.insight-panel h4{display:flex;align-items:center;gap:8px;font-size:.9rem;margin-bottom:12px}
-.insight-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px}
-.insight-item{padding:10px;background:#fff;border-radius:6px;font-size:.75rem;display:flex;gap:8px}
-.insight-icon{font-size:1rem}
+.insight-panel { background: linear-gradient(135deg, #E3F0FF, #BBDEFB); border-radius: 12px; padding: 18px; margin-top: 20px }
+.insight-panel h4 { display: flex; align-items: center; gap: 8px; font-size: .9rem; margin-bottom: 12px }
+.insight-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 8px }
+.insight-item { padding: 10px; background: #fff; border-radius: 6px; font-size: .75rem; display: flex; gap: 8px }
+.insight-icon { font-size: 1rem }
 
-.rec-panel{background:linear-gradient(135deg,#E0F2F1,#B2DFDB);border-radius:12px;padding:18px;margin-top:20px}
-.rec-panel h4{display:flex;align-items:center;gap:8px;font-size:.9rem;margin-bottom:12px}
-.rec-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-.rec-card{background:#fff;padding:12px;border-radius:8px}
-.rec-card h5{font-size:.8rem;margin-bottom:8px;display:flex;align-items:center;gap:6px}
-.rec-card ul{list-style:none}
-.rec-card li{padding:3px 0 3px 14px;font-size:.7rem;position:relative}
-.rec-card li::before{content:"→";position:absolute;left:0;color:var(--primary)}
+.rec-panel { background: linear-gradient(135deg, #E0F2F1, #B2DFDB); border-radius: 12px; padding: 18px; margin-top: 20px }
+.rec-panel h4 { display: flex; align-items: center; gap: 8px; font-size: .9rem; margin-bottom: 12px }
+.rec-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px }
+.rec-card { background: #fff; padding: 12px; border-radius: 8px }
+.rec-card h5 { font-size: .8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 6px }
+.rec-card ul { list-style: none }
+.rec-card li { padding: 3px 0 3px 14px; font-size: .7rem; position: relative }
+.rec-card li::before { content: "→"; position: absolute; left: 0; color: var(--primary) }
 
 /* =============================================================================
    IMPORT/EXPORT PANEL
    ============================================================================= */
-.import-panel{background:#fff;border-radius:12px;padding:18px;margin-top:20px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
-.import-panel h4{font-size:.9rem;margin-bottom:12px}
-.import-area{display:grid;grid-template-columns:1fr auto;gap:12px}
-@media(max-width:600px){.import-area{grid-template-columns:1fr}}
-textarea{width:100%;min-height:80px;padding:10px;border:2px dashed var(--light);border-radius:6px;font-family:monospace;font-size:.65rem;resize:vertical}
-textarea:focus{outline:none;border-color:var(--primary)}
-.import-btns{display:flex;flex-direction:column;gap:6px}
-details{margin-top:12px}
-summary{cursor:pointer;font-weight:500;font-size:.75rem;color:var(--gray)}
-pre{margin-top:8px;padding:10px;background:var(--dark);color:#E0E0E0;border-radius:6px;font-size:.6rem;overflow-x:auto;white-space:pre-wrap}
+.import-panel { background: #fff; border-radius: 12px; padding: 18px; margin-top: 20px; box-shadow: 0 2px 8px rgba(0,0,0,.06) }
+.import-panel h4 { font-size: .9rem; margin-bottom: 12px }
+.import-area { display: grid; grid-template-columns: 1fr auto; gap: 12px }
+@media (max-width: 600px) { .import-area { grid-template-columns: 1fr } }
+textarea { width: 100%; min-height: 80px; padding: 10px; border: 2px dashed var(--light); border-radius: 6px; font-family: monospace; font-size: .65rem; resize: vertical }
+textarea:focus { outline: none; border-color: var(--primary) }
+.import-btns { display: flex; flex-direction: column; gap: 6px }
+details { margin-top: 12px }
+summary { cursor: pointer; font-weight: 500; font-size: .75rem; color: var(--gray) }
+pre { margin-top: 8px; padding: 10px; background: var(--dark); color: #E0E0E0; border-radius: 6px; font-size: .6rem; overflow-x: auto; white-space: pre-wrap }
 
 /* =============================================================================
    FOOTER & UTILITIES
    ============================================================================= */
-.footer{text-align:center;padding:20px;color:var(--gray);font-size:.7rem;margin-top:20px}
-.toast{position:fixed;bottom:20px;right:20px;padding:10px 18px;background:var(--dark);color:#fff;border-radius:6px;font-size:.8rem;box-shadow:0 4px 12px rgba(0,0,0,.2);z-index:1000;display:none}
-.toast.success{background:var(--green)}.toast.error{background:var(--red)}
-.toast.show{display:block;animation:fadeIn .3s}
-@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-.empty-state{text-align:center;padding:40px 20px;color:var(--gray)}
-.empty-state .empty-icon{font-size:3rem;margin-bottom:10px;opacity:.5}
-.empty-state p{font-size:.85rem}
-.tag{display:inline-block;padding:2px 7px;border-radius:10px;font-size:.6rem;font-weight:600;margin-right:3px}
-.tag.me{background:#E0F2F1;color:var(--me-color)}
-.tag.cost{background:#FBE9E7;color:var(--cost-color)}
+.footer { text-align: center; padding: 20px; color: var(--gray); font-size: .7rem; margin-top: 20px }
+.toast { position: fixed; bottom: 20px; right: 20px; padding: 10px 18px; background: var(--dark); color: #fff; border-radius: 6px; font-size: .8rem; box-shadow: 0 4px 12px rgba(0,0,0,.2); z-index: 1000; display: none }
+.toast.success { background: var(--green) }
+.toast.error { background: var(--red) }
+.toast.show { display: block; animation: fadeIn .3s }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px) } to { opacity: 1; transform: translateY(0) } }
+.empty-state { text-align: center; padding: 40px 20px; color: var(--gray) }
+.empty-state .empty-icon { font-size: 3rem; margin-bottom: 10px; opacity: .5 }
+.empty-state p { font-size: .85rem }
 </style>
 </head>
 <body>
 <div class="toast" id="toast"></div>
 <div class="container">
 
-<!-- HEADER -->
+<!-- =============================================================================
+     HEADER
+     ============================================================================= -->
 <header class="header">
     <div>
         <h1>⚡ TTS Engineering AI Survey Dashboard</h1>
@@ -305,11 +337,12 @@ pre{margin-top:8px;padding:10px;background:var(--dark);color:#E0E0E0;border-radi
         <div class="header-stat"><div class="header-stat-value" id="totalCount">0</div><div class="header-stat-label">ผู้ตอบทั้งหมด</div></div>
         <div class="header-stat"><div class="header-stat-value" id="deptCount">0</div><div class="header-stat-label">แผนก</div></div>
         <div class="header-stat"><div class="header-stat-value" id="avgLevel">-</div><div class="header-stat-label">Avg Level</div></div>
-        <div class="header-stat"><div class="header-stat-value" id="meCount">0</div><div class="header-stat-label">M&amp;E Team</div></div>
     </div>
 </header>
 
-<!-- STATUS BAR -->
+<!-- =============================================================================
+     STATUS BAR
+     ============================================================================= -->
 <div class="status-bar">
     <div class="status-item"><div class="status-dot" id="statusDot"></div><span id="statusText">รอเชื่อมต่อ...</span></div>
     <div class="status-item"><span id="lastUpdate">-</span></div>
@@ -319,18 +352,10 @@ pre{margin-top:8px;padding:10px;background:var(--dark);color:#E0E0E0;border-radi
     </div>
 </div>
 
-<!-- FILTER BAR -->
+<!-- =============================================================================
+     FILTER BAR
+     ============================================================================= -->
 <div class="filter-bar">
-    <div class="filter-group"><label>กลุ่มงาน:</label>
-        <select id="groupFilter" onchange="syncGroupFilter()">
-            <option value="all">ทุกกลุ่ม</option>
-            <option value="engineering">🏗️ งานวิศวกรรมโครงการ</option>
-            <option value="me">⚡ งาน M&amp;E</option>
-            <option value="cost">💰 ประมาณการ/ต้นทุน</option>
-            <option value="procurement">📦 จัดซื้อ/ซัพพลายเชน</option>
-            <option value="support">📊 งานสนับสนุน</option>
-        </select>
-    </div>
     <div class="filter-group"><label>แผนก:</label>
         <select id="deptFilter" onchange="render()">
             <option value="all">ทุกแผนก</option>
@@ -374,76 +399,94 @@ pre{margin-top:8px;padding:10px;background:var(--dark);color:#E0E0E0;border-radi
     <button class="btn" onclick="exportData()">📥 Export JSON</button>
 </div>
 
-<!-- KPI ROW -->
+<!-- =============================================================================
+     KPI ROW
+     ============================================================================= -->
 <div class="kpi-row">
     <div class="kpi"><div class="kpi-value" id="kpiLevel">-</div><div class="kpi-label">Avg AI Readiness</div><div class="kpi-hint" id="kpiLevelHint">-</div></div>
     <div class="kpi green"><div class="kpi-value" id="kpiDaily">-</div><div class="kpi-label">ใช้ AI ทุกวัน</div><div class="kpi-hint">Active Users</div></div>
-    <div class="kpi teal"><div class="kpi-value" id="kpiME">-</div><div class="kpi-label">M&amp;E Engineers</div><div class="kpi-hint teal">ผู้รับเหมางานระบบ</div></div>
-    <div class="kpi orange"><div class="kpi-value" id="kpiCost">-</div><div class="kpi-label">Cost Control Team</div><div class="kpi-hint warning">บริหารต้นทุน</div></div>
     <div class="kpi blue"><div class="kpi-value" id="kpiTool">-</div><div class="kpi-label">Tool ยอดนิยม</div><div class="kpi-hint" id="kpiToolPct">-</div></div>
+    <div class="kpi orange"><div class="kpi-value" id="kpiPain">-</div><div class="kpi-label">Pain Points</div><div class="kpi-hint warning">ต้องแก้ไข</div></div>
     <div class="kpi red"><div class="kpi-value" id="kpiExpect">-</div><div class="kpi-label">ความคาดหวังเฉลี่ย</div><div class="kpi-hint danger">คะแนน/5</div></div>
 </div>
 
-<!-- MAIN GRID -->
+<!-- =============================================================================
+     MAIN GRID
+     ============================================================================= -->
 <div class="grid">
 
     <!-- Card A: Department Snapshot — grouped -->
     <div class="card full">
-        <div class="card-header"><div class="card-badge">A</div><div class="card-title"><h3>Department Snapshot <span class="tag me">M&amp;E</span><span class="tag cost">Cost</span></h3><p>ภาพรวมผู้ตอบแบ่งตามกลุ่มงาน — TTS Engineering</p></div></div>
+        <div class="card-header">
+            <div class="card-badge">A</div>
+            <div class="card-title">
+                <h3>Department Snapshot <span class="tag me">M&amp;E</span><span class="tag cost">Cost</span></h3>
+                <p>ภาพรวมผู้ตอบแบ่งตามกลุ่มงาน — TTS Engineering</p>
+            </div>
+        </div>
         <div class="card-body" id="deptSnapshot"></div>
     </div>
 
     <!-- Card B1: AI Readiness Level -->
     <div class="card">
-        <div class="card-header"><div class="card-badge">B1</div><div class="card-title"><h3>AI Readiness Level</h3><p>ระดับความพร้อมใช้ AI</p></div></div>
+        <div class="card-header">
+            <div class="card-badge">B1</div>
+            <div class="card-title"><h3>AI Readiness Level</h3><p>ระดับความพร้อมใช้ AI</p></div>
+        </div>
         <div class="card-body"><div class="level-bars" id="levelDist"></div></div>
     </div>
 
     <!-- Card B2: AI Tools Adoption -->
     <div class="card">
-        <div class="card-header"><div class="card-badge">B2</div><div class="card-title"><h3>AI Tools Adoption</h3><p>เครื่องมือ AI ที่ใช้</p></div></div>
+        <div class="card-header">
+            <div class="card-badge">B2</div>
+            <div class="card-title"><h3>AI Tools Adoption</h3><p>เครื่องมือ AI ที่ใช้</p></div>
+        </div>
         <div class="card-body" id="toolsAdoption"></div>
     </div>
 
     <!-- Card B3: Usage Frequency -->
     <div class="card">
-        <div class="card-header"><div class="card-badge">B3</div><div class="card-title"><h3>Usage Frequency</h3><p>ความถี่การใช้งาน AI</p></div></div>
+        <div class="card-header">
+            <div class="card-badge">B3</div>
+            <div class="card-title"><h3>Usage Frequency</h3><p>ความถี่การใช้งาน AI</p></div>
+        </div>
         <div class="card-body"><div class="freq-chart" id="freqChart"></div></div>
     </div>
 
-    <!-- Card C1: Daily Work Patterns -->
+    <!-- Card C: Daily Work Patterns -->
     <div class="card">
-        <div class="card-header"><div class="card-badge">C</div><div class="card-title"><h3>Daily Work Patterns</h3><p>งานประจำที่ทำบ่อยที่สุด</p></div></div>
+        <div class="card-header">
+            <div class="card-badge">C</div>
+            <div class="card-title"><h3>Daily Work Patterns</h3><p>งานประจำที่ทำบ่อยที่สุด</p></div>
+        </div>
         <div class="card-body"><div class="work-list" id="dailyWorkList"></div></div>
-    </div>
-
-    <!-- Card C-ME: M&E Work Breakdown (TTS Exclusive) -->
-    <div class="card full">
-        <div class="card-header"><div class="card-badge me">M&amp;E</div><div class="card-title"><h3>M&amp;E Engineering Breakdown <span class="tag me">TTS Exclusive</span></h3><p>งานวิศวกรรมระบบแยกตามสาขา — Electrical, Sanitary, HVAC, Fire, BIM</p></div></div>
-        <div class="card-body"><div class="me-breakdown" id="meBreakdown"></div></div>
-    </div>
-
-    <!-- Card C-COST: Cost Control Panel (TTS Exclusive) -->
-    <div class="card full">
-        <div class="card-header"><div class="card-badge cost">💰</div><div class="card-title"><h3>Cost Control & Estimation Panel <span class="tag cost">TTS Exclusive</span></h3><p>ข้อมูลทีมบริหารต้นทุนและประมาณการ</p></div></div>
-        <div class="card-body"><div class="cost-panel" id="costPanel"></div></div>
     </div>
 
     <!-- Card D1: Pain Points -->
     <div class="card">
-        <div class="card-header"><div class="card-badge">D1</div><div class="card-title"><h3>Pain Points</h3><p>ปัญหาที่พบบ่อย (เรียงตามความถี่)</p></div></div>
+        <div class="card-header">
+            <div class="card-badge">D1</div>
+            <div class="card-title"><h3>Pain Points</h3><p>ปัญหาที่พบบ่อย (เรียงตามความถี่)</p></div>
+        </div>
         <div class="card-body"><div class="problem-list" id="problemList"></div></div>
     </div>
 
     <!-- Card D2: AI Help Needed -->
     <div class="card">
-        <div class="card-header"><div class="card-badge">D2</div><div class="card-title"><h3>AI Help Needed</h3><p>อยากให้ AI ช่วยเรื่องอะไรมากสุด</p></div></div>
+        <div class="card-header">
+            <div class="card-badge">D2</div>
+            <div class="card-title"><h3>AI Help Needed</h3><p>อยากให้ AI ช่วยเรื่องอะไรมากสุด</p></div>
+        </div>
         <div class="card-body"><div class="theme-grid" id="aiHelpThemes"></div></div>
     </div>
 
     <!-- Card D3: Feature Matrix -->
     <div class="card full">
-        <div class="card-header"><div class="card-badge">D3</div><div class="card-title"><h3>Interested Features Matrix</h3><p>Impact × Effort Analysis — ฟีเจอร์ที่สนใจ</p></div></div>
+        <div class="card-header">
+            <div class="card-badge">D3</div>
+            <div class="card-title"><h3>Interested Features Matrix</h3><p>Impact × Effort Analysis — ฟีเจอร์ที่สนใจ</p></div>
+        </div>
         <div class="card-body">
             <div class="matrix" id="featureMatrix">
                 <div class="quad tl">⚡ Quick Wins</div>
@@ -456,36 +499,52 @@ pre{margin-top:8px;padding:10px;background:var(--dark);color:#E0E0E0;border-radi
 
     <!-- Card E1: Expectations Score -->
     <div class="card">
-        <div class="card-header"><div class="card-badge">E1</div><div class="card-title"><h3>Expectations Score</h3><p>ความคาดหวังจากการอบรม (1-5)</p></div></div>
+        <div class="card-header">
+            <div class="card-badge">E1</div>
+            <div class="card-title"><h3>Expectations Score</h3><p>ความคาดหวังจากการอบรม (1-5)</p></div>
+        </div>
         <div class="card-body"><table class="rating-table" id="expectTable"></table></div>
     </div>
 
     <!-- Card E2: Interested Topics -->
     <div class="card">
-        <div class="card-header"><div class="card-badge">E2</div><div class="card-title"><h3>Interested Topics</h3><p>หัวข้อที่อยากเรียนรู้</p></div></div>
+        <div class="card-header">
+            <div class="card-badge">E2</div>
+            <div class="card-title"><h3>Interested Topics</h3><p>หัวข้อที่อยากเรียนรู้</p></div>
+        </div>
         <div class="card-body"><div class="theme-grid" id="topicsGrid"></div></div>
     </div>
 
     <!-- Card F: Ideas & Suggestions -->
     <div class="card full">
-        <div class="card-header"><div class="card-badge">F</div><div class="card-title"><h3>Ideas & Suggestions</h3><p>ไอเดียและข้อเสนอแนะจากทีมงาน TTS</p></div></div>
+        <div class="card-header">
+            <div class="card-badge">F</div>
+            <div class="card-title"><h3>Ideas &amp; Suggestions</h3><p>ไอเดียและข้อเสนอแนะจากทีมงาน TTS</p></div>
+        </div>
         <div class="card-body"><div class="ideas-list" id="ideasList"></div></div>
     </div>
+
 </div>
 
-<!-- INSIGHT PANEL -->
+<!-- =============================================================================
+     INSIGHT PANEL
+     ============================================================================= -->
 <div class="insight-panel">
     <h4>💡 Key Insights — TTS Engineering</h4>
     <div class="insight-list" id="insightList"></div>
 </div>
 
-<!-- RECOMMENDATION PANEL -->
+<!-- =============================================================================
+     RECOMMENDATION PANEL
+     ============================================================================= -->
 <div class="rec-panel">
     <h4>🎯 Training Recommendations — TTS Engineering</h4>
     <div class="rec-cards" id="recCards"></div>
 </div>
 
-<!-- IMPORT / EXPORT PANEL -->
+<!-- =============================================================================
+     IMPORT/EXPORT PANEL
+     ============================================================================= -->
 <div class="import-panel">
     <h4>📥 Data Import / Export</h4>
     <div class="import-area">
@@ -510,7 +569,8 @@ pre{margin-top:8px;padding:10px;background:var(--dark);color:#E0E0E0;border-radi
 // =============================================================================
 // CONFIG
 // =============================================================================
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzJdEq74AEdBizPNHtEd5tmwSlP-FE5aDLRAukW_sl42BQBHOh_519dFsqs6CPtMcvK/exec'; // 
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzJdEq74AEdBizPNHtEd5tmwSlP-FE5aDLRAukW_sl42BQBHOh_519dFsqs6CPtMcvK/exec';
+
 // =============================================================================
 // DATA
 // =============================================================================
@@ -543,14 +603,14 @@ const SCHEMA_DISPLAY = `{
 }`;
 
 // =============================================================================
-// LABELS — TTS Version (includes M&E + Cost Control)
+// LABELS — TTS Version
 // =============================================================================
 const DEPT_GROUPS = {
-    engineering: ['project-engineering','site-supervision','qcqa','safety'],
-    me: ['electrical-me','sanitary-me','hvac-me','fire-me','bim-shop'],
-    cost: ['qs-boq','cost-control','cost-analyst','budget-planning'],
-    procurement: ['procurement','warehouse','logistics','supplier-dev'],
-    support: ['accounting','hr','it','management','admin']
+    engineering:  ['project-engineering', 'site-supervision', 'qcqa', 'safety'],
+    me:           ['electrical-me', 'sanitary-me', 'hvac-me', 'fire-me', 'bim-shop'],
+    cost:         ['qs-boq', 'cost-control', 'cost-analyst', 'budget-planning'],
+    procurement:  ['procurement', 'warehouse', 'logistics', 'supplier-dev'],
+    support:      ['accounting', 'hr', 'it', 'management', 'admin']
 };
 
 const DEPT_LABELS = {
@@ -580,24 +640,30 @@ const DEPT_LABELS = {
 };
 
 const GROUP_META = {
-    engineering:  { label:'🏗️ งานวิศวกรรมโครงการ', css:'eng' },
-    me:           { label:'⚡ งานวิศวกรรมระบบ (M&E)', css:'me' },
-    cost:         { label:'💰 งานประมาณการและบริหารต้นทุน', css:'cost' },
-    procurement:  { label:'📦 งานจัดซื้อและซัพพลายเชน', css:'proc' },
-    support:      { label:'📊 งานสนับสนุนองค์กร', css:'support' }
+    engineering:  { label: '🏗️ งานวิศวกรรมโครงการ', css: 'eng' },
+    me:           { label: '⚡ งานวิศวกรรมระบบ (M&E)', css: 'me' },
+    cost:         { label: '💰 งานประมาณการและบริหารต้นทุน', css: 'cost' },
+    procurement:  { label: '📦 งานจัดซื้อและซัพพลายเชน', css: 'proc' },
+    support:      { label: '📊 งานสนับสนุนองค์กร', css: 'support' }
 };
 
 const ME_SYSTEMS = {
-    'electrical-me': { label:'⚡ ระบบไฟฟ้า', key:'electrical-me' },
-    'sanitary-me':   { label:'💧 ระบบสุขาภิบาล', key:'sanitary-me' },
-    'hvac-me':       { label:'❄️ HVAC', key:'hvac-me' },
-    'fire-me':       { label:'🔥 ระบบดับเพลิง', key:'fire-me' },
-    'bim-shop':      { label:'🖥️ BIM/Shop', key:'bim-shop' }
+    'electrical-me': { label: '⚡ ระบบไฟฟ้า' },
+    'sanitary-me':   { label: '💧 ระบบสุขาภิบาล' },
+    'hvac-me':       { label: '❄️ HVAC' },
+    'fire-me':       { label: '🔥 ระบบดับเพลิง' },
+    'bim-shop':      { label: '🖥️ BIM/Shop' }
 };
 
-const LEVEL_LABELS = ['ไม่เคยใช้เลย','เคยลอง 1-2 ครั้ง','ใช้เป็นครั้งคราว','ใช้สัปดาห์ละ 1-2 ครั้ง','ใช้ทุกวัน','ใช้เป็นเครื่องมือหลัก'];
-const LEVEL_COLORS = ['#E0E0E0','#FFCDD2','#FFAB91','#FFE082','#A5D6A7','#4CAF50'];
-const FREQ_MAP = { 'ทุกวัน':'ทุกวัน','หลายครั้งต่อสัปดาห์':'หลายครั้ง\n/สัปดาห์','สัปดาห์ละครั้ง':'สัปดาห์\nละครั้ง','นานๆ ครั้ง (เดือนละ 1-2 ครั้ง)':'นานๆ ครั้ง','ไม่เคยใช้':'ไม่เคย' };
+const LEVEL_LABELS = ['ไม่เคยใช้เลย', 'เคยลอง 1-2 ครั้ง', 'ใช้เป็นครั้งคราว', 'ใช้สัปดาห์ละ 1-2 ครั้ง', 'ใช้ทุกวัน', 'ใช้เป็นเครื่องมือหลัก'];
+const LEVEL_COLORS = ['#E0E0E0', '#FFCDD2', '#FFAB91', '#FFE082', '#A5D6A7', '#4CAF50'];
+const FREQ_MAP = {
+    'ทุกวัน': 'ทุกวัน',
+    'หลายครั้งต่อสัปดาห์': 'หลายครั้ง\n/สัปดาห์',
+    'สัปดาห์ละครั้ง': 'สัปดาห์\nละครั้ง',
+    'นานๆ ครั้ง (เดือนละ 1-2 ครั้ง)': 'นานๆ ครั้ง',
+    'ไม่เคยใช้': 'ไม่เคย'
+};
 
 const EXPECT_LABELS = {
     understandAI:       'เข้าใจ AI พื้นฐาน',
@@ -621,8 +687,8 @@ async function fetchFromGoogleSheets() {
     }
     updateStatus('loading');
     try {
-        const res = await fetch(GOOGLE_SCRIPT_URL + '?action=get');
-        const json = await res.json();
+        const response = await fetch(GOOGLE_SCRIPT_URL + '?action=get');
+        const json = await response.json();
         if (json.respondents && json.respondents.length > 0) {
             DATA = json;
             render();
@@ -635,9 +701,9 @@ async function fetchFromGoogleSheets() {
             toast('ยังไม่มีข้อมูลใน Google Sheets', '');
             render();
         }
-    } catch(err) {
+    } catch (error) {
         updateStatus('error');
-        toast('เชื่อมต่อไม่ได้: ' + err.message, 'error');
+        toast('เชื่อมต่อไม่ได้: ' + error.message, 'error');
     }
 }
 
@@ -688,63 +754,61 @@ function getFiltered() {
     });
 }
 
-function syncGroupFilter() {
-    const group = document.getElementById('groupFilter').value;
-    const deptSelect = document.getElementById('deptFilter');
-    deptSelect.value = 'all';
-    if (group !== 'all') {
-        const depts = DEPT_GROUPS[group] || [];
-        // filter to first matching
-        for (const d of depts) {
-            for (const opt of deptSelect.options) {
-                if (opt.value === d) { deptSelect.value = 'all'; break; }
-            }
-        }
-    }
-    render();
-}
 
 function countBy(arr, key) {
     const c = {};
-    arr.forEach(i => { const v = typeof key==='function' ? key(i) : i[key]; if (v!=null) c[v]=(c[v]||0)+1; });
+    arr.forEach(i => {
+        const v = typeof key === 'function' ? key(i) : i[key];
+        if (v != null) c[v] = (c[v] || 0) + 1;
+    });
     return c;
 }
 
 function flatCount(arr, key) {
     const c = {};
-    arr.forEach(i => { const items = i[key]; if (Array.isArray(items)) items.forEach(v => { if (v) c[v]=(c[v]||0)+1; }); });
+    arr.forEach(i => {
+        const items = i[key];
+        if (Array.isArray(items)) items.forEach(v => { if (v) c[v] = (c[v] || 0) + 1; });
+    });
     return c;
 }
 
 function flatCountNested(arr, key) {
     const c = {};
-    arr.forEach(i => { const obj=i[key]; if (obj&&typeof obj==='object') Object.values(obj).forEach(items => { if (Array.isArray(items)) items.forEach(v => { if (v) c[v]=(c[v]||0)+1; }); }); });
+    arr.forEach(i => {
+        const obj = i[key];
+        if (obj && typeof obj === 'object') {
+            Object.values(obj).forEach(items => {
+                if (Array.isArray(items)) items.forEach(v => { if (v) c[v] = (c[v] || 0) + 1; });
+            });
+        }
+    });
     return c;
 }
 
 function avg(arr, key) {
     if (!arr.length) return 0;
-    return arr.reduce((s,i) => s+(typeof key==='function'?key(i):(i[key]||0)),0)/arr.length;
+    return arr.reduce((s, i) => s + (typeof key === 'function' ? key(i) : (i[key] || 0)), 0) / arr.length;
 }
 
-function sortObj(obj) { return Object.entries(obj).sort((a,b)=>b[1]-a[1]); }
-
-function toast(msg, type='') {
-    const t = document.getElementById('toast');
-    t.textContent = msg;
-    t.className = 'toast show ' + type;
-    setTimeout(() => t.classList.remove('show'), 3000);
-}
-
-function emptyState(msg='ไม่มีข้อมูล') {
-    return `<div class="empty-state"><div class="empty-icon">📭</div><p>${msg}</p></div>`;
-}
+function sortObj(obj) { return Object.entries(obj).sort((a, b) => b[1] - a[1]); }
 
 function getDeptGroup(dept) {
     for (const [g, depts] of Object.entries(DEPT_GROUPS)) {
         if (depts.includes(dept)) return g;
     }
     return 'support';
+}
+
+function toast(msg, type = '') {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.className = 'toast show ' + (type || '');
+    setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+function emptyState(msg = 'ไม่มีข้อมูล') {
+    return `<div class="empty-state"><div class="empty-icon">📭</div><p>${msg}</p></div>`;
 }
 
 // =============================================================================
@@ -756,42 +820,37 @@ function render() {
 
     // Header stats
     document.getElementById('totalCount').textContent = d.length;
-    const uniqueDepts = [...new Set(d.map(r=>r.department).filter(Boolean))];
+    const uniqueDepts = [...new Set(d.map(r => r.department).filter(Boolean))];
     document.getElementById('deptCount').textContent = uniqueDepts.length || '-';
-    const avgLvl = hasData ? avg(d, r=>r.experienceLevel||0) : 0;
-    document.getElementById('avgLevel').textContent = hasData ? 'L'+avgLvl.toFixed(1) : '-';
-    const meCount = d.filter(r => DEPT_GROUPS.me.includes(r.department)).length;
-    document.getElementById('meCount').textContent = meCount;
-
-    // KPIs
+    const avgLvl = hasData ? avg(d, r => r.experienceLevel || 0) : 0;
+    document.getElementById('avgLevel').textContent = hasData ? 'L' + avgLvl.toFixed(1) : '-';
     document.getElementById('kpiLevel').textContent = hasData ? avgLvl.toFixed(1) : '-';
     const lvlCounts = countBy(d, 'experienceLevel');
-    document.getElementById('kpiLevelHint').textContent = hasData ? sortObj(lvlCounts).slice(0,2).map(x=>'L'+x[0]).join(' & ') : '-';
-    const dailyPct = hasData ? Math.round((d.filter(r=>r.usageFrequency==='ทุกวัน').length/d.length)*100) : 0;
-    document.getElementById('kpiDaily').textContent = hasData ? dailyPct+'%' : '-';
-    document.getElementById('kpiME').textContent = meCount || '-';
-    const costCount = d.filter(r => DEPT_GROUPS.cost.includes(r.department)).length;
-    document.getElementById('kpiCost').textContent = costCount || '-';
+    document.getElementById('kpiLevelHint').textContent = hasData ? sortObj(lvlCounts).slice(0, 2).map(x => 'L' + x[0]).join(' & ') : '-';
+    const dailyPct = hasData ? Math.round((d.filter(r => r.usageFrequency === 'ทุกวัน').length / d.length) * 100) : 0;
+    document.getElementById('kpiDaily').textContent = hasData ? dailyPct + '%' : '-';
+    const problems = flatCountNested(d, 'problems');
+    document.getElementById('kpiPain').textContent = hasData ? Object.keys(problems).length : '-';
     const tools = flatCount(d, 'toolsUsed');
     const topTool = sortObj(tools)[0];
     document.getElementById('kpiTool').textContent = topTool ? topTool[0].split(' ')[0] : '-';
-    document.getElementById('kpiToolPct').textContent = topTool ? Math.round(topTool[1]/d.length*100)+'% ใช้' : '-';
+    document.getElementById('kpiToolPct').textContent = topTool ? Math.round(topTool[1] / d.length * 100) + '% ใช้' : '-';
     const expectKeys = Object.keys(EXPECT_LABELS);
-    const avgExp = hasData ? expectKeys.reduce((s,k) => s+avg(d,r=>(r.expectationsScore||{})[k]||0),0)/expectKeys.length : 0;
+    const avgExp = hasData ? expectKeys.reduce((s, k) => s + avg(d, r => (r.expectationsScore || {})[k] || 0), 0) / expectKeys.length : 0;
     document.getElementById('kpiExpect').textContent = hasData ? avgExp.toFixed(1) : '-';
 
     // Card A: Department Snapshot grouped
-    const deptCounts = countBy(d, 'department');
     if (!hasData) {
         document.getElementById('deptSnapshot').innerHTML = emptyState('รอข้อมูลจากผู้ตอบแบบสอบถาม');
     } else {
+        const deptCounts = countBy(d, 'department');
         document.getElementById('deptSnapshot').innerHTML = Object.entries(GROUP_META).map(([groupKey, meta]) => {
             const depts = DEPT_GROUPS[groupKey] || [];
             const cards = depts.map(dept => {
                 const cnt = deptCounts[dept] || 0;
-                if (cnt === 0 && !d.some(r=>r.department===dept)) return '';
-                return `<div class="dept-card ${groupKey==='me'?'me':groupKey==='cost'?'cost':groupKey==='procurement'?'proc':groupKey==='support'?'support':''}">
-                    <div class="dept-name">${DEPT_LABELS[dept]||dept}</div>
+                const colorClass = groupKey === 'me' ? 'me' : groupKey === 'cost' ? 'cost' : groupKey === 'procurement' ? 'proc' : groupKey === 'support' ? 'support' : '';
+                return `<div class="dept-card ${colorClass}">
+                    <div class="dept-name">${DEPT_LABELS[dept] || dept}</div>
                     <div class="dept-count">${cnt}</div>
                 </div>`;
             }).join('');
@@ -802,10 +861,10 @@ function render() {
         }).join('');
     }
 
-    // Card B1: Level distribution
-    document.getElementById('levelDist').innerHTML = [0,1,2,3,4,5].map(l => {
-        const cnt = lvlCounts[l]||0;
-        const pct = hasData ? Math.round(cnt/d.length*100) : 0;
+    // Card B1: Level Distribution
+    document.getElementById('levelDist').innerHTML = [0, 1, 2, 3, 4, 5].map(l => {
+        const cnt = lvlCounts[l] || 0;
+        const pct = hasData ? Math.round(cnt / d.length * 100) : 0;
         return `<div class="level-item">
             <div class="level-badge l${l}">L${l}</div>
             <div class="level-info">
@@ -817,9 +876,9 @@ function render() {
 
     // Card B2: Tools
     const toolCnt = flatCount(d, 'toolsUsed');
-    const genAI = ['ChatGPT (OpenAI)','Google Gemini / Bard','Claude (Anthropic)','Microsoft Copilot'];
-    const specAI = ['โปรแกรมถอดแบบ AI','AI อ่านเอกสาร/OCR','LINE AI / OA'];
-    const renderTools = list => list.map(t=>`<div class="tool-chip">${t.split(' ')[0]}<span class="cnt">${toolCnt[t]||0}</span></div>`).join('');
+    const genAI = ['ChatGPT (OpenAI)', 'Google Gemini / Bard', 'Claude (Anthropic)', 'Microsoft Copilot'];
+    const specAI = ['โปรแกรมถอดแบบ AI', 'AI อ่านเอกสาร/OCR', 'LINE AI / OA'];
+    const renderTools = list => list.map(t => `<div class="tool-chip">${t.split(' ')[0]}<span class="cnt">${toolCnt[t] || 0}</span></div>`).join('');
     document.getElementById('toolsAdoption').innerHTML = `
         <div class="tool-section"><div class="tool-label">🤖 Generative AI</div><div class="tool-grid">${renderTools(genAI)}</div></div>
         <div class="tool-section"><div class="tool-label">🔧 Specialized AI</div><div class="tool-grid">${renderTools(specAI)}</div></div>
@@ -828,9 +887,9 @@ function render() {
     // Card B3: Frequency
     const freqCnt = countBy(d, 'usageFrequency');
     const maxFreq = Math.max(...Object.values(freqCnt), 1);
-    document.getElementById('freqChart').innerHTML = Object.entries(FREQ_MAP).map(([k,l]) => {
-        const cnt = freqCnt[k]||0;
-        const h = hasData ? Math.round(cnt/maxFreq*100) : 0;
+    document.getElementById('freqChart').innerHTML = Object.entries(FREQ_MAP).map(([k, l]) => {
+        const cnt = freqCnt[k] || 0;
+        const h = hasData ? Math.round(cnt / maxFreq * 100) : 0;
         return `<div class="freq-wrap"><div class="freq-bar" style="height:${h}px"><span class="freq-val">${cnt}</span></div><div class="freq-lbl">${l}</div></div>`;
     }).join('');
 
@@ -838,98 +897,93 @@ function render() {
     const dailyWorkAll = flatCountNested(d, 'dailyWork');
     const repeatWorkAll = flatCount(d, 'repeatWork');
     const combinedWork = { ...dailyWorkAll };
-    Object.entries(repeatWorkAll).forEach(([k,v]) => combinedWork[k]=(combinedWork[k]||0)+v);
+    Object.entries(repeatWorkAll).forEach(([k, v]) => combinedWork[k] = (combinedWork[k] || 0) + v);
     const topWork = sortObj(combinedWork).slice(0, 10);
     const maxWork = topWork[0] ? topWork[0][1] : 1;
-    document.getElementById('dailyWorkList').innerHTML = topWork.length ? topWork.map(([name,count],i) => `
+    document.getElementById('dailyWorkList').innerHTML = topWork.length ? topWork.map(([name, count], i) => `
         <div class="work-item">
-            <div class="work-rank">${i+1}</div>
-            <div class="work-info"><div class="work-name">${name}</div><div class="work-track"><div class="work-fill" style="width:${count/maxWork*100}%"></div></div></div>
+            <div class="work-rank">${i + 1}</div>
+            <div class="work-info">
+                <div class="work-name">${name}</div>
+                <div class="work-track"><div class="work-fill" style="width:${count / maxWork * 100}%"></div></div>
+            </div>
             <div class="work-pct">${count}</div>
-        </div>`).join('') : emptyState();
-
-    // Card C-ME: M&E Breakdown (TTS Exclusive)
-    document.getElementById('meBreakdown').innerHTML = Object.entries(ME_SYSTEMS).map(([key, sys]) => {
-        const engineers = d.filter(r=>r.department===key);
-        const cnt = engineers.length;
-        const topWorks = sortObj(flatCountNested(engineers,'dailyWork')).slice(0,3).map(([w])=>w).join(', ') || '-';
-        return `<div class="me-card">
-            <div class="me-name">${sys.label}</div>
-            <div class="me-count">${cnt} คน</div>
-            <div class="me-work-list">${cnt>0 ? '📌 '+topWorks : 'ยังไม่มีผู้ตอบ'}</div>
-        </div>`;
-    }).join('');
-
-    // Card C-COST: Cost Control Panel (TTS Exclusive)
-    const costTeam = d.filter(r=>DEPT_GROUPS.cost.includes(r.department));
-    const costDepts = ['qs-boq','cost-control','cost-analyst','budget-planning'];
-    document.getElementById('costPanel').innerHTML = costDepts.map(dept => {
-        const members = d.filter(r=>r.department===dept);
-        const topPainPoints = sortObj(flatCountNested(members,'problems')).slice(0,2).map(([p])=>p.substring(0,30)).join('; ') || '-';
-        return `<div class="cost-stat">
-            <div class="cost-stat-title">${DEPT_LABELS[dept]||dept}</div>
-            <div class="cost-stat-value">${members.length} คน</div>
-            <div class="cost-stat-list">${members.length>0 ? '⚠️ '+topPainPoints : 'ยังไม่มีผู้ตอบ'}</div>
-        </div>`;
-    }).join('');
+        </div>
+    `).join('') : emptyState();
 
     // Card D1: Problems
-    const problemList = sortObj(flatCountNested(d,'problems')).slice(0,8);
-    document.getElementById('problemList').innerHTML = problemList.length ? problemList.map(([n,c]) => `
-        <div class="problem-item"><div class="problem-icon">⚠️</div><div class="problem-name">${n}</div><div class="problem-cnt">${c}</div></div>
+    const problemList = sortObj(flatCountNested(d, 'problems')).slice(0, 8);
+    document.getElementById('problemList').innerHTML = problemList.length ? problemList.map(([n, c]) => `
+        <div class="problem-item">
+            <div class="problem-icon">⚠️</div>
+            <div class="problem-name">${n}</div>
+            <div class="problem-cnt">${c}</div>
+        </div>
     `).join('') : emptyState();
 
     // Card D2: AI Help
-    const helpThemes = sortObj(flatCount(d,'aiHelpTop3')).slice(0,8);
-    const icons = ['🤖','📊','📝','🚀','💡','📈','🔍','✨'];
-    document.getElementById('aiHelpThemes').innerHTML = helpThemes.length ? helpThemes.map(([n,c],i) => `
-        <div class="theme-card"><div class="theme-icon">${icons[i%8]}</div><div><div class="theme-name">${n}</div><div class="theme-votes">${c} คน</div></div></div>
+    const helpThemes = sortObj(flatCount(d, 'aiHelpTop3')).slice(0, 8);
+    const icons = ['🤖', '📊', '📝', '🚀', '💡', '📈', '🔍', '✨'];
+    document.getElementById('aiHelpThemes').innerHTML = helpThemes.length ? helpThemes.map(([n, c], i) => `
+        <div class="theme-card">
+            <div class="theme-icon">${icons[i % 8]}</div>
+            <div><div class="theme-name">${n}</div><div class="theme-votes">${c} คน</div></div>
+        </div>
     `).join('') : emptyState();
 
     // Card D3: Feature Matrix
-    const features = sortObj(flatCountNested(d,'interestedFeatures'));
+    const features = sortObj(flatCountNested(d, 'interestedFeatures'));
     const matrix = document.getElementById('featureMatrix');
-    matrix.querySelectorAll('.bubble').forEach(b=>b.remove());
-    features.slice(0,12).forEach(([n,c]) => {
-        const impact = 0.3 + Math.random()*0.4;
-        const effort = 0.2 + Math.random()*0.6;
+    matrix.querySelectorAll('.bubble').forEach(b => b.remove());
+    features.slice(0, 12).forEach(([n, c]) => {
+        const impact = 0.3 + Math.random() * 0.4;
+        const effort = 0.2 + Math.random() * 0.6;
         const b = document.createElement('div');
         b.className = 'bubble';
-        b.style.left = (effort*85+7)+'%';
-        b.style.top = ((1-impact)*85+7)+'%';
-        b.innerHTML = `${n.substring(0,22)}<span class="v">${c}</span>`;
+        b.style.left = (effort * 85 + 7) + '%';
+        b.style.top = ((1 - impact) * 85 + 7) + '%';
+        b.innerHTML = `${n.substring(0, 22)}<span class="v">${c}</span>`;
         matrix.appendChild(b);
     });
 
     // Card E1: Expectations
-    document.getElementById('expectTable').innerHTML = `<thead><tr><th>ความคาดหวัง</th><th>คะแนนเฉลี่ย</th></tr></thead><tbody>${
-        Object.entries(EXPECT_LABELS).map(([k,l]) => {
-            const a = avg(d, r=>(r.expectationsScore||{})[k]||0);
-            return `<tr><td>${l}</td><td><div class="rating-wrap"><div class="rating-bar"><div class="rating-fill" style="width:${a*20}%"></div></div><span class="rating-score">${hasData?a.toFixed(1):'-'}</span></div></td></tr>`;
-        }).join('')
-    }</tbody>`;
+    document.getElementById('expectTable').innerHTML = `
+        <thead><tr><th>ความคาดหวัง</th><th>คะแนนเฉลี่ย</th></tr></thead>
+        <tbody>${Object.entries(EXPECT_LABELS).map(([k, l]) => {
+            const a = avg(d, r => (r.expectationsScore || {})[k] || 0);
+            return `<tr>
+                <td>${l}</td>
+                <td><div class="rating-wrap">
+                    <div class="rating-bar"><div class="rating-fill" style="width:${a * 20}%"></div></div>
+                    <span class="rating-score">${hasData ? a.toFixed(1) : '-'}</span>
+                </div></td>
+            </tr>`;
+        }).join('')}</tbody>`;
 
     // Card E2: Topics
-    const topics = sortObj(flatCount(d,'interestedTopics')).slice(0,8);
-    const topicIcons = ['📚','💻','🎯','📈','🔧','🌟','🧠','🚀'];
-    document.getElementById('topicsGrid').innerHTML = topics.length ? topics.map(([n,c],i) => `
-        <div class="theme-card"><div class="theme-icon">${topicIcons[i%8]}</div><div><div class="theme-name">${n}</div><div class="theme-votes">${c} คน</div></div></div>
+    const topics = sortObj(flatCount(d, 'interestedTopics')).slice(0, 8);
+    const topicIcons = ['📚', '💻', '🎯', '📈', '🔧', '🌟', '🧠', '🚀'];
+    document.getElementById('topicsGrid').innerHTML = topics.length ? topics.map(([n, c], i) => `
+        <div class="theme-card">
+            <div class="theme-icon">${topicIcons[i % 8]}</div>
+            <div><div class="theme-name">${n}</div><div class="theme-votes">${c} คน</div></div>
+        </div>
     `).join('') : emptyState();
 
     // Card F: Ideas
-    const ideas = d.filter(r=>(r.creativity&&r.creativity.length)||r.concerns||r.speakerNotes);
-    document.getElementById('ideasList').innerHTML = ideas.length ? ideas.slice(0,15).map(r => {
+    const ideas = d.filter(r => (r.creativity && r.creativity.length) || r.concerns || r.speakerNotes);
+    document.getElementById('ideasList').innerHTML = ideas.length ? ideas.slice(0, 15).map(r => {
         const g = getDeptGroup(r.department);
-        const badgeCls = g==='me'?'me':g==='cost'?'cost':'';
+        const badgeCls = g === 'me' ? 'me' : g === 'cost' ? 'cost' : '';
         return `<div class="idea-card">
             <div class="idea-header">
-                <span class="idea-badge ${badgeCls}">${DEPT_LABELS[r.department]||r.department||'-'}</span>
-                <span style="font-size:.65rem;color:var(--gray)">${r.name||'-'} • ${r.position||''}</span>
+                <span class="idea-badge ${badgeCls}">${DEPT_LABELS[r.department] || r.department || '-'}</span>
+                <span style="font-size:.65rem;color:var(--gray)">${r.name || '-'} • ${r.position || ''}</span>
             </div>
             <div class="idea-text">
-                ${r.creativity&&r.creativity.length ? '💡 '+r.creativity.join(', ') : ''}
-                ${r.concerns ? '<br><span style="color:var(--orange)">⚠️ '+r.concerns+'</span>' : ''}
-                ${r.speakerNotes ? '<br><em style="color:var(--gray)">[Note: '+r.speakerNotes+']</em>' : ''}
+                ${r.creativity && r.creativity.length ? '💡 ' + r.creativity.join(', ') : ''}
+                ${r.concerns ? '<br><span style="color:var(--orange)">⚠️ ' + r.concerns + '</span>' : ''}
+                ${r.speakerNotes ? '<br><em style="color:var(--gray)">[Note: ' + r.speakerNotes + ']</em>' : ''}
             </div>
         </div>`;
     }).join('') : emptyState();
@@ -937,28 +991,32 @@ function render() {
     // Insights
     const topProblem = problemList[0] ? problemList[0][0] : '-';
     const topHelp = helpThemes[0] ? helpThemes[0][0] : '-';
-    const l0l1Pct = hasData ? Math.round(((lvlCounts[0]||0)+(lvlCounts[1]||0))/d.length*100) : 0;
-    const mePct = hasData ? Math.round(meCount/d.length*100) : 0;
+    const l0l1Pct = hasData ? Math.round(((lvlCounts[0] || 0) + (lvlCounts[1] || 0)) / d.length * 100) : 0;
     const insights = hasData ? [
-        { icon:'📊', text:`ระดับความพร้อมเฉลี่ย L${avgLvl.toFixed(1)} — ${avgLvl<2?'ต้องเน้นพื้นฐาน':avgLvl<3.5?'พร้อมต่อยอด':'ทีมพร้อมใช้งานจริง'}` },
-        { icon:'⚡', text:`M&E Engineers คิดเป็น ${mePct}% ของผู้ตอบ — ต้องมี Track เฉพาะงานระบบ` },
-        { icon:'💰', text:`Cost Control Team ${costCount} คน — ต้องการ AI ช่วยติดตามต้นทุน Real-time` },
-        { icon:'🔥', text:`${dailyPct}% ใช้ AI ทุกวัน — ${dailyPct<20?'ต้องกระตุ้นการใช้งาน':dailyPct<50?'มีโอกาสขยายผล':'Adoption สูงมาก'}` },
-        { icon:'⚠️', text:`Pain Point หลัก: "${topProblem}"` },
-        { icon:'💡', text:`อยากให้ AI ช่วย: "${topHelp}"` },
-        { icon:'🎯', text:`${l0l1Pct}% ยังไม่เคยใช้/ใช้น้อย (L0-L1) — ต้องเน้น Hands-on Workshop` },
-        { icon:'📈', text:`ความคาดหวังเฉลี่ย ${avgExp.toFixed(1)}/5` }
-    ] : [{ icon:'📭', text:'รอข้อมูลจากผู้ตอบแบบสอบถาม' }];
-    document.getElementById('insightList').innerHTML = insights.map(ins => `<div class="insight-item"><span class="insight-icon">${ins.icon}</span><span>${ins.text}</span></div>`).join('');
+        { icon: '📊', text: `ระดับความพร้อมเฉลี่ย L${avgLvl.toFixed(1)} — ${avgLvl < 2 ? 'ต้องเน้นพื้นฐาน' : avgLvl < 3.5 ? 'พร้อมต่อยอด' : 'ทีมพร้อมใช้งานจริง'}` },
+        { icon: '🔥', text: `${dailyPct}% ใช้ AI ทุกวัน — ${dailyPct < 20 ? 'ต้องกระตุ้นการใช้งาน' : dailyPct < 50 ? 'มีโอกาสขยายผล' : 'Adoption สูงมาก'}` },
+        { icon: '⚠️', text: `Pain Point หลัก: "${topProblem}"` },
+        { icon: '💡', text: `อยากให้ AI ช่วย: "${topHelp}"` },
+        { icon: '🎯', text: `${l0l1Pct}% ยังไม่เคยใช้/ใช้น้อย (L0-L1) — ต้องเน้น Hands-on Workshop` },
+        { icon: '📈', text: `ความคาดหวังเฉลี่ย ${avgExp.toFixed(1)}/5` }
+    ] : [{ icon: '📭', text: 'รอข้อมูลจากผู้ตอบแบบสอบถาม' }];
+    document.getElementById('insightList').innerHTML = insights.map(ins => `
+        <div class="insight-item"><span class="insight-icon">${ins.icon}</span><span>${ins.text}</span></div>
+    `).join('');
 
-    // Recommendations — TTS specific (4 tracks including M&E)
+    // Recommendations — 4 Tracks TTS specific
     const recs = [
-        { title:'🎓 Track 1: AI Foundation', items:['สำหรับ L0-L1 ทุกแผนก','AI คืออะไร ทำอะไรได้','Hands-on: ลองใช้ ChatGPT / Claude','Use Case ง่ายๆ ในงาน TTS'] },
-        { title:'⚡ Track 2: AI for M&E Engineers', items:['สำหรับ L1-L3 ทีมระบบ','AI ช่วยตรวจสอบ Shop Drawing','Prompt สำหรับงานคำนวณระบบ','AI อ่านสเปคและมาตรฐาน M&E'] },
-        { title:'💰 Track 3: AI for Cost Control', items:['สำหรับ QS/BOQ/Cost Team','AI ช่วยถอดแบบ BOQ เร็วขึ้น','Dashboard ติดตามต้นทุน Real-time','วิเคราะห์ Variance อัตโนมัติ'] },
-        { title:'🚀 Track 4: AI Power Users', items:['สำหรับ L3-L5 ทุกแผนก','Prompt Engineering ขั้นสูง','เชื่อมต่อ AI กับ ERP/LINE','สร้าง AI Workflow ของตัวเอง'] }
+        { title: '🎓 Track 1: AI Foundation', items: ['สำหรับ L0-L1 ทุกแผนก', 'AI คืออะไร ทำอะไรได้', 'Hands-on: ลองใช้ ChatGPT / Claude', 'Use Case ง่ายๆ ในงาน TTS'] },
+        { title: '⚡ Track 2: AI for M&E Engineers', items: ['สำหรับ L1-L3 ทีมระบบ', 'AI ช่วยตรวจสอบ Shop Drawing', 'Prompt สำหรับงานคำนวณระบบ', 'AI อ่านสเปคและมาตรฐาน M&E'] },
+        { title: '💰 Track 3: AI for Cost Control', items: ['สำหรับ QS/BOQ/Cost Team', 'AI ช่วยถอดแบบ BOQ เร็วขึ้น', 'Dashboard ติดตามต้นทุน Real-time', 'วิเคราะห์ Variance อัตโนมัติ'] },
+        { title: '🚀 Track 4: AI Power Users', items: ['สำหรับ L3-L5 ทุกแผนก', 'Prompt Engineering ขั้นสูง', 'เชื่อมต่อ AI กับ ERP/LINE', 'สร้าง AI Workflow ของตัวเอง'] }
     ];
-    document.getElementById('recCards').innerHTML = recs.map(r => `<div class="rec-card"><h5>${r.title}</h5><ul>${r.items.map(i=>`<li>${i}</li>`).join('')}</ul></div>`).join('');
+    document.getElementById('recCards').innerHTML = recs.map(r => `
+        <div class="rec-card">
+            <h5>${r.title}</h5>
+            <ul>${r.items.map(i => `<li>${i}</li>`).join('')}</ul>
+        </div>
+    `).join('');
 }
 
 // =============================================================================
@@ -966,7 +1024,6 @@ function render() {
 // =============================================================================
 function resetFilters() {
     document.getElementById('deptFilter').value = 'all';
-    document.getElementById('groupFilter').value = 'all';
     document.getElementById('searchInput').value = '';
     render();
 }
@@ -981,7 +1038,7 @@ function importData() {
         else throw new Error('Invalid format');
         render();
         toast('นำเข้าข้อมูลสำเร็จ ' + DATA.respondents.length + ' รายการ', 'success');
-    } catch(e) { toast('JSON ไม่ถูกต้อง: '+e.message, 'error'); }
+    } catch (e) { toast('JSON ไม่ถูกต้อง: ' + e.message, 'error'); }
 }
 
 function exportData() {
@@ -989,7 +1046,7 @@ function exportData() {
     navigator.clipboard.writeText(json)
         .then(() => toast('คัดลอก JSON แล้ว', 'success'))
         .catch(() => {
-            const blob = new Blob([json], { type:'application/json' });
+            const blob = new Blob([json], { type: 'application/json' });
             const a = document.createElement('a');
             a.href = URL.createObjectURL(blob);
             a.download = 'tts_engineering_survey_data.json';
